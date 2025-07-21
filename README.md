@@ -1,6 +1,13 @@
 # ☁️ Cloud Resume Challenge (AWS Edition)
 
+
+
 This repository contains my implementation of the Cloud Resume Challenge, a comprehensive project that combines front-end, back-end, DevOps, and modern cloud practices to build and deploy a technical resume on AWS. The challenge showcases skills in cloud architecture, serverless computing, CI/CD pipelines, and web development.
+
+![0651f854-e9d9-400c-96c9-c53c010dd543](https://github.com/user-attachments/assets/8024c879-e7ba-4870-9616-3e71d6f9d1e4)
+
+
+🔗 [Live Site](https://www.hugoleonor.com)
 
 ---
 
@@ -46,11 +53,8 @@ This repository contains my implementation of the Cloud Resume Challenge, a comp
 
 ## 🧱 Architecture
 
-```plaintext
-User → CloudFront → S3 (Frontend)
-                    ↓
-             API Gateway → Lambda (Python) → DynamoDB
-```
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/a29030b8-59c9-4dde-aff6-3a97be9d7054" />
+
 
 - **S3**: Stores HTML, CSS, and JavaScript files for the static resume website.
 - **CloudFront**: Distributes content globally with HTTPS and caching for performance.
@@ -58,21 +62,33 @@ User → CloudFront → S3 (Frontend)
 - **AWS Lambda**: Serverless function to increment and retrieve the visitor count.
 - **DynamoDB**: NoSQL database for persistent storage of the visitor counter.
 
+---
+
+
 ### 📁 Project Structure
 
 ```
 cloud-resume/
 ├── frontend/
-│   ├── index.html          # Resume webpage
-│   ├── styles.css         # Custom styling
-│   └── script.js          # Visitor counter logic
+│   └── index.html           # Portfolio main webpage
 ├── backend/
-│   ├── lambda_function.py # Lambda function for API
-│   ├── requirements.txt   # Python dependencies
-│   ├── tests/             # Unit tests
-│   │   └── test_lambda.py
-│   └── template.yaml      # AWS SAM template for IaC
-└── README.md              # Project documentation
+│   ├── lambda_function.py   # AWS Lambda function (visitor counter code)
+│   ├── lambda_function.zip  # Zipped Lambda function code (required by AWS Lambda)
+│   └── tests/
+│       └── test_lambda.py   # Unit tests for the Lambda function
+├── infra/               
+│   ├── acm.tf               # SSL certificate (AWS Certificate Manager)
+│   ├── cloudfront.tf        # CloudFront CDN configuration
+│   ├── dynamodb.tf          # DynamoDB table configuration
+│   ├── iam.tf               # IAM roles and permissions
+│   ├── lambda.tf            # Lambda deployment setup
+│   ├── outputs.tf           # Terraform output variables
+│   ├── provider.tf          # AWS provider configuration
+│   ├── route53.tf           # DNS setup
+│   ├── s3.tf                # S3 bucket for static website hosting
+│   └── variables.tf         # Reusable input variables
+└── README.md               
+
 ```
 
 ### ⚙️ CI/CD Workflows
@@ -105,9 +121,22 @@ cloud-resume/
 - **HTML, CSS, JavaScript**: Frontend for the resume website.
 - **pytest**: Unit testing for backend reliability.
 
-
 ---
+
+## Final thoughts
+
+Participating in the **Cloud Resume Challenge** was an incredibly enriching experience. This project allowed me to **consolidate my AWS knowledge** and deepen my practical skills in areas such as **Infrastructure as Code**, **CI/CD**, **Serverless**, and **Web Development**.
+
+Throughout the challenge, I faced obstacles like the **initial configuration of CloudFront with HTTPS** and managing resources using **AWS SAM** and **Terraform** together. However, these challenges turned into great learning opportunities — especially around **deployment automation** and building **robust pipelines** with **GitHub Actions**.
+
+Beyond the technical aspect, this project also gave me a new perspective on **cloud development best practices** and the importance of having a **production-oriented mindset** — focusing on **security**, **scalability**, and **efficiency**.
+
+I now feel much more confident working with **core AWS services** and designing and implementing **end-to-end cloud solutions**.
+
+--- 
 
 ## 📜 License
 
 MIT License © Hugo Leonor
+
+quero meter uma secção antes da license de Faalr um bocado da minha experiencia do projeto
