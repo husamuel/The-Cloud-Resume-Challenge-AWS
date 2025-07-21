@@ -138,5 +138,3 @@ I now feel much more confident working with **core AWS services** and designing 
 ## 📜 License
 
 MIT License © Hugo Leonor
-
-quero meter uma secção antes da license de Faalr um bocado da minha experiencia do projeto
